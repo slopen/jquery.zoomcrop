@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>jquery zoomcrop</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.0.2/nouislider.min.css" type="text/css">
+    <link rel="stylesheet" href="jquery.zoomcrop.css">
+
+    <!-- scripts -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.0.2/nouislider.min.js"></script>
+
+
+
+    <script src="jquery.zoomcrop.js"></script>
+
+    <style>
+        .box{
+            width:320px;
+            height:320px;
+            margin:20px auto 0;
+
+            opacity:0.3;
+        }
+        #zoomcrop{
+            box-sizing:border-box;
+            background:#eee;
+        }
+        .element{
+            background: #111;
+        }
+    </style>
+
+    <script>
+        $(function(){
+            $('#image').on('load', function(){
+                var zoomcrop, $el = $('#zoomcrop');
+
+                var testValue = {x:100, y:100, width:1000, height:1000};
+
+                $('.box').css('opacity', 1);
+
+                $el.zoomcrop({
+                    handle : '.zoomcrop-handle',
+                    element: '.zoomcrop-element'
+                });
+                zoomcrop = $.data($el [0], 'zoomcrop');
+
+                $('.serialize').on('click', function(){
+                    console.log(zoomcrop.val());
+                    return false;
+                });
+                $('.set').on('click', function(){
+                    zoomcrop.val(testValue);
+                    return false;
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+<div id="main">
+
+    <div class="box">
+        <div id="zoomcrop" class="zoomcrop-holder">
+            <div class="zoomcrop-handle">
+                <img id="image" class="zoomcrop-element" src="http://www.hdwallpapersdesktop.com/Space/nebula/Nebula%20Wallpaper,%20carina,%20ngc%203372,%20stars,%20universe.jpg">
+            </div>
+            <div id="zoom-control" class="zoomcrop-control"></div>
+        </div>
+        <p>
+            <button class="serialize">console.log(value);</button>
+        </p>
+        <p>
+            <button class="set">set value</button><br/>
+            <code id="value">{top:100, left:100, width:1000, height:1000}</code>
+        </p>
+    </div>
+
+
+</div>
+
+</body>
+</html>

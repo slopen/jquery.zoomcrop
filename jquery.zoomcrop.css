@@ -1,0 +1,1 @@
+.zoomcrop-holder{position:relative;height:0;padding-bottom:100%;overflow:hidden}.zoomcrop-holder .zoomcrop-handle{position:absolute;top:0;left:0;z-index:0}.zoomcrop-holder .zoomcrop-handle .zoomcrop-element{pointer-events:none;position:absolute;left:50%;top:50%}.zoomcrop-holder .zoomcrop-control{position:absolute;right:20px;top:5%;height:90%;width:18px;z-index:1000}
