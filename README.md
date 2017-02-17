@@ -1,4 +1,4 @@
 # jquery.zoomcrop
 jQuery element cropping: zoom &amp; draggable
 
-see index.html example
+[demo](https://rawgit.com/slopen/jquery.zoomcrop/master/index.html)
